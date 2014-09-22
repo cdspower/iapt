@@ -1,6 +1,3 @@
-def index():
-    return dict()
-
 def books():
     return dict()
 
