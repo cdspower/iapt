@@ -53,7 +53,7 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
-timestamp: 2014-09-24T10:51:50.357056
+timestamp: 2014-09-30T11:45:06.462754
 CREATE TABLE products(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name CHAR(512),
@@ -63,21 +63,9 @@ CREATE TABLE products(
     publisher CHAR(512)
 );
 success!
-timestamp: 2014-09-24T10:51:50.385341
+timestamp: 2014-09-30T11:45:06.525335
 CREATE TABLE features(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name CHAR(512),
-    price CHAR(512),
-    type CHAR(512),
-    description CHAR(512),
-    publisher CHAR(512)
+    product_id INTEGER REFERENCES products (id) ON DELETE CASCADE
 );
 success!
-timestamp: 2014-09-24T11:36:32.403841
-ALTER TABLE features ADD product_id INTEGER REFERENCES products (id) ON DELETE CASCADE;
-timestamp: 2014-09-24T11:37:16.124878
-ALTER TABLE features ADD product_id INTEGER REFERENCES products (id) ON DELETE CASCADE;
-timestamp: 2014-09-24T11:37:41.022297
-ALTER TABLE features ADD product_id INTEGER REFERENCES products (id) ON DELETE CASCADE;
-timestamp: 2014-09-24T11:38:48.745764
-ALTER TABLE features ADD product_id INTEGER REFERENCES products (id) ON DELETE CASCADE;
