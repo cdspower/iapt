@@ -10,13 +10,16 @@
 
 <h2>Features</h2>
 
+<!-- @IAPT: you can do DIV elements as helpers, but I find them very awkward to do as you have long stretches
+of code contained within brackets that can be hard to match up -->
 <div class="featured">
         <!-- @IAPT: Loop through the dict returned from the default controller - note the 'item' only loops
             through the keys of dict, so you have to action actual values from the nested dict in the data -->
         {{for item in features:}}
         <!-- @IAPT: We can intersperse HTML within the Python statements -->
         <div class="product">
-        <h3>{{=features[item]['name']}}</h3>
+        <!-- @IAPT: Helper H3 puts an h3 header element around the text inside -->
+        {{=H3(features[item]['name'])}}
         <ul>
             <li><strong>Writer:</strong> {{=features[item]['writer']}}</li>
             <li><strong>Publisher:</strong> {{=features[item]['publisher']}}</li>
@@ -30,4 +33,3 @@
         <!-- @IAPT: And now we need a pass statement to indicate the for loop block is done. -->
         {{pass}}
 </div>
-
