@@ -12,21 +12,20 @@
 
 <!-- @IAPT: you can do DIV elements as helpers, but I find them very awkward to do as you have long stretches
 of code contained within brackets that can be hard to match up -->
+
 <div class="featured">
         <!-- @IAPT: Loop through the dict returned from the default controller - note the 'item' only loops
             through the keys of dict, so you have to action actual values from the nested dict in the data -->
-        {{for item in features:}}
+        {{for feature in features:}}
         <!-- @IAPT: We can intersperse HTML within the Python statements -->
         <div class="product">
         <!-- @IAPT: Helper H3 puts an h3 header element around the text inside -->
-        {{=H3(features[item]['name'])}}
+        {{=H3(feature.name)}}
         <ul>
-            <li><strong>Writer:</strong> {{=features[item]['writer']}}</li>
-            <li><strong>Publisher:</strong> {{=features[item]['publisher']}}</li>
-            <li><strong>Format:</strong> {{=features[item]['type']}}</li>
-            <li><strong>Pages:</strong> {{=features[item]['pages']}}</li>
-            <li><strong>Price:</strong> {{=features[item]['price']}}</li>
-            <li><strong>Description:</strong> {{=features[item]['description']}}</li>
+            <li><strong>Publisher:</strong> {{=feature.publisher}}</li>
+            <li><strong>Format:</strong> {{=feature.type}}</li>
+            <li><strong>Price:</strong> {{=feature.price}}</li>
+            <li><strong>Description:</strong> {{=feature.description}}</li>
 
         </ul>
         </div>
