@@ -20,12 +20,16 @@ of code contained within brackets that can be hard to match up -->
         <!-- @IAPT: We can intersperse HTML within the Python statements -->
         <div class="product">
         <!-- @IAPT: Helper H3 puts an h3 header element around the text inside -->
-        {{=H3(feature.name)}}
+        <!-- @IAPT: In cases where we have a join returning data, we need to specify the table name - this is
+        because web2py needs to return both tables to us - there is a way to avoid this, but it involves abstracting
+        the database away even further than we have it right now -->
+        {{=H3(feature.products.name)}}
         <ul>
-            <li><strong>Publisher:</strong> {{=feature.publisher}}</li>
-            <li><strong>Format:</strong> {{=feature.type}}</li>
-            <li><strong>Price:</strong> {{=feature.price}}</li>
-            <li><strong>Description:</strong> {{=feature.description}}</li>
+
+            <li><strong>Publisher:</strong> {{=feature.products.publisher}}</li>
+            <li><strong>Format:</strong> {{=feature.products.type}}</li>
+            <li><strong>Price:</strong> {{=feature.products.price}}</li>
+            <li><strong>Description:</strong> {{=feature.products.description}}</li>
 
         </ul>
         </div>

@@ -1,166 +1,24 @@
 {{extend 'congo-layout.html'}}
 <h2>Videos</h2>
+<div class="featured">
+        <!-- @IAPT: Loop through the dict returned from the default controller - note the 'item' only loops
+            through the keys of dict, so you have to action actual values from the nested dict in the data -->
+        {{features = db(db.products.type == 'Blu-Ray').select()}}
+        {{for feature in features:}}
+        <!-- @IAPT: We can intersperse HTML within the Python statements -->
+        <div class="product">
+        <!-- @IAPT: Helper H3 puts an h3 header element around the text inside -->
+        <!-- @IAPT: Unlike default/index.html, we only have 1 table being queried, so we don't need that extra indicator
+        of what table we are pulling data from -->
+        {{=H3(feature.name)}}
+        <ul>
+            <li><strong>Publisher:</strong> {{=feature.publisher}}</li>
+            <li><strong>Format:</strong> {{=feature.type}}</li>
+            <li><strong>Price:</strong> {{=feature.price}}</li>
+            <li><strong>Description:</strong> {{=feature.description}}</li>
 
-<!-- @IAPT This loop takes the $products variable from our View code (i.e. booksView.php or videosView.php and prints it all out.  -->
-<div class="product">
-    <h3>Avengers Assemble</h3>
-    <h4>Details:</h4>
-    <ul>
-        <li>
-            <strong>Publisher:</strong>
-            Walt Disney Studios Home Entertainment
-        </li>
-        <li>
-            <strong>Format:</strong>
-            Blu-Ray
-        </li>
-        <li>
-            <strong>Price:</strong>
-            12.00
-        </li>
-    </ul>
-    <h4>At a glance</h4>
-
-    <p>When Nick Fury (Samuel L. Jackson), the director of an international peacekeeping agency known as
-        S.H.I.E.L.D., encounters an unexpected enemy that threatens global safety and security, he finds himself in
-        need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment
-        effort begins for Earth?s mightiest heroes. Iron Man (Robert Downey Jr.), Captain America (Chris Evans), The
-        Incredible Hulk (Mark Ruffalo), Thor (Chris Hemsworth), and two of the world?s greatest assassins, Black
-        Widow (Scarlett Johansson) and Hawkeye (Jeremy Renner), must assemble to defeat Loki (Tom Hiddleston), the
-        darkest villain the Earth has ever known. </p>
-
-</div>
-<div class="product">
-    <h3>Captain America: The First Avenger</h3>
-    <h4>Details:</h4>
-    <ul>
-        <li>
-            <strong>Publisher:</strong>
-            Paramount Home Entertainment
-        </li>
-        <li>
-            <strong>Format:</strong>
-            Blu-Ray
-        </li>
-        <li>
-            <strong>Price:</strong>
-            18.54
-        </li>
-    </ul>
-    <h4>At a glance</h4>
-
-    <p>Superhero action adventure based on the 1940s Marvel Comics series. Chris Evans stars as Steve Rogers, who
-        volunteers for a top secret military research project after being deemed physically unfit to enlist in the
-        U.S. Army during the Second World War. The experiment transforms him into super-soldier Captain America, who
-        - along with sidekick Bucky Barnes (Sebastian Stan) - takes on the mighty power of Hitler's henchman Red
-        Skull (Hugo Weaving). </p>
-
-</div>
-<div class="product">
-    <h3>Thor</h3>
-    <h4>Details:</h4>
-    <ul>
-        <li>
-            <strong>Publisher:</strong>
-            Paramount Home Entertainment
-        </li>
-        <li>
-            <strong>Format:</strong>
-            Blu-Ray
-        </li>
-        <li>
-            <strong>Price:</strong>
-            12.67
-        </li>
-    </ul>
-    <h4>At a glance</h4>
-
-    <p>Kenneth Branagh directs this fantasy superhero adventure based on the Marvel comics character, which in turn
-        is based on the ancient myth of Norse God of Thunder, Thor. Moving between present day Earth and the
-        fantastic realm of Asgard, the film tells the story of the Mighty Thor (Chris Hemsworth), a powerful but
-        arrogant warrior god whose reckless actions rekindle an ancient feud among the deities. As a punishment,
-        Thor is cast out of Asgard and forced to live on Earth among humankind. There, he falls in love with
-        scientist Jane Foster (Natalie Portman) and, as the darkest forces of Asgard are sent to invade Earth,
-        eventually learns what it means to be a real hero. </p>
-
-</div>
-<div class="product">
-    <h3>Superman: The Movie</h3>
-    <h4>Details:</h4>
-    <ul>
-        <li>
-            <strong>Publisher:</strong>
-            Warner Home Video
-        </li>
-        <li>
-            <strong>Format:</strong>
-            Blu-Ray
-        </li>
-        <li>
-            <strong>Price:</strong>
-            9.85
-        </li>
-    </ul>
-    <h4>At a glance</h4>
-
-    <p>This star-packed extravaganza brings the comic book legend to the screen in grand style. It begins with
-        Superman's scientist dad sending the infant superhero down to earth just as the home planet Krypton explodes
-        into a zillion pieces. Taking up permanent residence on earth the young Superman grows up into super-normal
-        reporter Clark Kent, wooing winsome colleague Lois Lane and keeping his true identity hidden from the world.
-        But when three villains, led by Lex Luthor, come up with a dastardly real estate scheme that involves
-        shoving California into the ocean, Clark Kent decides it's time to don his cape and fight the forces of
-        evil. </p>
-
-</div>
-<div class="product">
-    <h3>Batman: Begins</h3>
-    <h4>Details:</h4>
-    <ul>
-        <li>
-            <strong>Publisher:</strong>
-            Warner Home Video
-        </li>
-        <li>
-            <strong>Format:</strong>
-            Blu-Ray
-        </li>
-        <li>
-            <strong>Price:</strong>
-            7.67
-        </li>
-    </ul>
-    <h4>At a glance</h4>
-
-    <p>Batman Begins explores the origins of the Batman legend and the Dark Knight's emergence as a force for good
-        in Gotham. In the wake of his parents' murder, disillusioned industrial heir Bruce Wayne (Christian Bale)
-        travels the world seeking the means to fight injustice and turn fear against those who prey on the fearful.
-        He returns to Gotham and unveils his alter-ego: Batman, a masked crusader who uses his strength, intellect
-        and an array of high tech deceptions to fight the sinister forces that threaten the city. </p>
-
-</div>
-<div class="product">
-    <h3>The Rocketeer</h3>
-    <h4>Details:</h4>
-    <ul>
-        <li>
-            <strong>Publisher:</strong>
-            Walt Disney Studios Home Entertainment
-        </li>
-        <li>
-            <strong>Format:</strong>
-            Blu-Ray
-        </li>
-        <li>
-            <strong>Price:</strong>
-            21.00
-        </li>
-    </ul>
-    <h4>At a glance</h4>
-
-    <p>Set in glamorous 1930s Hollywood, it tells the story of Cliff Secord, a down-on-his-luck pilot who stumbles
-        upon an incredible invention - a top secret jetpack that allows him to soar through the skies like a human
-        rocket. But before long, a sinister spy (Timothy Dalton) plots to steal the jetpack, thrusting Cliff into a
-        dangerous mission that ultimately transforms him into an extraordinary hero. Praised by critics as a most
-        entertaining film, Rocketeer is high-flying action-adventure at its very finest. </p>
-
+        </ul>
+        </div>
+        <!-- @IAPT: And now we need a pass statement to indicate the for loop block is done. -->
+        {{pass}}
 </div>

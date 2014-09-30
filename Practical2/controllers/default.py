@@ -2,4 +2,4 @@
 # @IAPT: Very simple controller
 
 def index():
-    return dict(features = db(db.products.id > 0).select())
+    return dict(features=db(db.products.id==db.features.product_id).select())
