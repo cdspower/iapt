@@ -1,0 +1,12 @@
+{{extend 'congo-layout.html'}}
+
+<h2>Search the Congo Store</h2>
+<h2>Input form</h2>
+<form enctype="multipart/form-data"
+      action="{{=URL()}}" method="post">
+Your name:
+<input search="Search" />
+<input type="submit" />
+</form>
+<h2>Submitted variables</h2>
+{{=BEAUTIFY(request.vars)}}
