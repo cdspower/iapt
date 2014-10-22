@@ -18,4 +18,10 @@ def search():
         response.flash = 'Your form is empty.  Please enter a name of a product to search the store.'
     else:
         response.flash = 'Please enter a name of a product to search the store.'
-    return dict(form=form)
+
+    if request.vars.search is not None:
+        term="%"+request.vars.search+"%"
+        results = db(db.products.name.like(term)).select()
+    else:
+        results = dict()
+    return dict(form=form, results=results)
