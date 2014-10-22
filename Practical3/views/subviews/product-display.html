@@ -1,0 +1,17 @@
+{{for result in results:}}
+<!-- @IAPT: We can intersperse HTML within the Python statements -->
+<div class="product">
+<!-- @IAPT: Helper H3 puts an h3 header element around the text inside -->
+<!-- @IAPT: In cases where we have a join returning data, we need to specify the table name - this is
+because web2py needs to return both tables to us - there is a way to avoid this, but it involves abstracting
+the database away even further than we have it right now -->
+{{=H3(result.name)}}
+<ul>
+
+    <li><strong>Publisher:</strong> {{=result.publisher}}</li>
+    <li><strong>Format:</strong> {{=result.type}}</li>
+    <li><strong>Price:</strong> {{=result.price}}</li>
+    <li><strong>Description:</strong> {{=result.description}}</li>
+
+</ul>
+</div>
