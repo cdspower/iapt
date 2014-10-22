@@ -9,4 +9,13 @@ def index():
     return dict(features=db(db.products.id==db.features.product_id).select())
 
 def search():
-    return dict()
+    form=FORM('Search Products',
+              INPUT(_name='search', requires=IS_NOT_EMPTY()),
+              INPUT(_type='submit'))
+    if form.accepts(request,session):
+        response.flash = 'Performing search for products containing the text: '+request.vars.search+'.'
+    elif form.errors:
+        response.flash = 'Your form is empty.  Please enter a name of a product to search the store.'
+    else:
+        response.flash = 'Please enter a name of a product to search the store.'
+    return dict(form=form)
