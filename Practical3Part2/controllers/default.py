@@ -25,17 +25,3 @@ def search():
     else:
         results = dict()
     return dict(form=form, results=results)
-
-def addproduct():
-    addform = FORM('Add a New Product',
-                   DIV(LABEL('Product Name:', _for='product_name')),
-                   DIV(INPUT(_name='product_name', requires=IS_NOT_EMPTY())),
-                   DIV(LABEL('Product Price:', _for='product_price')),
-                   DIV(INPUT(_name='price',requires=IS_NOT_EMPTY())),
-                   DIV(LABEL('Product Type', _for='product_type')),
-                   DIV(SELECT('Book','Blu-Ray', value='b',_name='product_type')),
-                   DIV(LABEL('Product Description', _name='product_description')),
-                   DIV(TEXTAREA(_name='product_description', requires=IS_NOT_EMPTY())),
-                   DIV(INPUT(_type='submit')))
-
-    return dict(addform=addform)
