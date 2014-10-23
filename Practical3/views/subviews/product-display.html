@@ -5,7 +5,7 @@
 <!-- @IAPT: In cases where we have a join returning data, we need to specify the table name - this is
 because web2py needs to return both tables to us - there is a way to avoid this, but it involves abstracting
 the database away even further than we have it right now -->
-{{=H3(result.name)}}
+{{=H3(A(result.name, callback=URL('store', 'books', args=[result.id])))}}
 <ul>
 
     <li><strong>Publisher:</strong> {{=result.publisher}}</li>
