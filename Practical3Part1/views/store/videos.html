@@ -1,0 +1,22 @@
+{{extend 'congo-layout.html'}}
+<h2>Videos</h2>
+<div class="featured">
+        <!-- @IAPT: Here we have created a true MVC where we are pulling the data from the model from the view -->
+        {{for video in videos:}}
+        <!-- @IAPT: We can intersperse HTML within the Python statements -->
+        <div class="product">
+        <!-- @IAPT: Helper H3 puts an h3 header element around the text inside -->
+        <!-- @IAPT: Unlike default/index.html, we only have 1 table being queried, so we don't need that extra indicator
+        of what table we are pulling data from -->
+        {{=H3(video.name)}}
+        <ul>
+            <li><strong>Publisher:</strong> {{=video.publisher}}</li>
+            <li><strong>Format:</strong> {{=video.type}}</li>
+            <li><strong>Price:</strong> {{=video.price}}</li>
+            <li><strong>Description:</strong> {{=video.description}}</li>
+
+        </ul>
+        </div>
+        <!-- @IAPT: And now we need a pass statement to indicate the for loop block is done. -->
+        {{pass}}
+</div>
