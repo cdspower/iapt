@@ -13,4 +13,7 @@ def books():
 #It just happens that in this case, the controller doesn't have any business logic to execute.
 #@IAPT: Practical 3 - replaced the "books" with "results" to use the subview created.
 def videos():
-    return dict(results = db(db.products.type == 'Blu-Ray').select())
+    if product_id is not None:
+        return dict(results = db((db.products.type == 'Blu-Ray') & (db.products.id == product_id)).select())
+    else:
+        return dict(results = db(db.products.type == 'Blu-Ray').select())

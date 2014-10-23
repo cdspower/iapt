@@ -49,27 +49,30 @@ def addproduct():
         db.products.insert(name=request.vars.product_name,price=request.vars.product_price, type=request.vars.product_type,
                            description=request.vars.product_description,publisher=request.vars.product_publisher)
         db.commit
-        response.flash = 'New product added to database.'
+        response.flash = 'New product added to store.'
     elif addform.errors:
         response.flash = 'One or more of your form fields has an error. Please see below for more information'
     else:
         response.flash = 'Please complete the form below to add a new product.'
     return dict(addform=addform)
 
-def addproduct2():
+def updateproduct():
     #@IAPT - this is where we change the type of widget the description gets - this is relatively bad practice, better
     #to do it at time of creation of the database if we are goingto use SQLFORM
     db.products.description.widget = SQLFORM.widgets.text.widget
 
-    record = db.products(request.args(0)) or redirect(URL('addproduct2'))
-    addform =SQLFORM(db.products, record)
+    #@IAPT retrieve the indiviudal product by getting the arguments of URL
+    record = db.products(request.args(0)) or redirect(URL('default', 'noproduct'))
+    updateform =SQLFORM(db.products, record, fields=['name', 'price','description','type','publisher'])
 
 
-
-    if addform.accepts(request,session):
-        response.flash = 'New product added to database.'
-    elif addform.errors:
+    if updateform.accepts(request,session):
+        response.flash = 'Product information updated in story inventory.'
+    elif updateform.errors:
         response.flash = 'One or more of your form fields has an error. Please see below for more information'
     else:
         response.flash = 'Please complete the form below to add a new product.'
-    return dict(addform=addform)
+    return dict(updateform=updateform)
+
+def noproduct():
+    return dict()
