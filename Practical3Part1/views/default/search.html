@@ -1,0 +1,7 @@
+{{extend 'congo-layout.html'}}
+
+<h2>Search the Congo Store</h2>
+<div class="flash">{{=response.flash or ''}}</div>
+{{=form}}
+<h2>Request Variables</h2>
+{{=BEAUTIFY(request.vars)}}
