@@ -8,4 +8,17 @@
           box-sizing: border-box;
 }
 
+/* Setting myself up some fonts.  The font size of 62.5% sets my
+ * font to be exactly 10px.  Default font size is 16px.  Why do we
+ * do this?
+ * It allows me to use em as a unit easily in place of pixels (px) or point (pt)
+ * in my fonts and layout.  Now 1.0em == 100% == 10px == 8pt, and so if I want
+ * to make everything 200% bigger, I can specify 2.0em, which displays more
+ * reliably in most major browsers.    Useful conversions available at: http://pxtoem.com/
+ */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+}
+
 
