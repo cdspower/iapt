@@ -40,3 +40,59 @@ body {
 #intro {
 	color: #000;
 }
+
+/* This is the header section. Providing the red colour for the website, a maximum width is
+ * the full 900px that we specific for the main.  Remember, these elements cascade, my header
+ * is inside of the main content area - and as a result anything like 100% will be relative to
+ * what is set there.
+ */
+header {
+	max-width: 100%;
+	padding: 1em;
+	border: 1em solid #9A2720;
+	height: 10em;
+	margin: .1em 0em 0em 0em;
+	background: #9A2720;
+	font-weight: bold;
+	color: #fff;
+
+	-moz-border-radius: 1.5em;
+	border-radius: 1.5em;
+}
+
+/* Setting up some nice navigation using a semantic element nav */
+nav {
+	max-width: 100%;
+	color: #9A2720;
+	border-bottom: .3em solid #9A2720;
+	background: #fff;
+}
+
+/* Now I style the list inside; I get rid of any margins or padding, so it will be completely flush to the
+ * edge, then I centre the whole thing.  I also remove any bullets.
+ */
+.navlist{
+    list-style:none;
+    margin:0;
+    padding:0;
+	text-align:center;
+}
+
+/* I change all of my list items in the nav list to not be block elements, but instead inline elements
+ * so that they will be next to each other.
+ */
+.navlist li{
+    display:inline;
+}
+
+/* This is for styling the text inside the list elements.  All text in the list elements are contained in
+ * links, and as a result I need to set styles in a cascading way down to the anchor element <a>
+ */
+.navlist a{
+    display:inline-block;
+    padding:1em;
+	text-decoration: none;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #9A2720;
+}
