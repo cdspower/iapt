@@ -21,4 +21,18 @@ body {
 	font-size: 62.5%;
 }
 
+/* An old school div class element for main content.  This can be replaced by the
+ * HTML5 extension <main> if I so choose.
+ * 900 px sets the maximum size that my screen can go.  This is becoming more common
+ * in websites, making them fixed layout.  This has potential consequences down the road,
+ * in particular if people resize the stuff inside the that main section a lot, it will
+ * spill out the edges.  The alternative is to use a fluid layout.
+ * I also set the font size to be a minimum of 12px (1.2 em = 10 point font).
+ */
+#main {
+  	max-width: 900px;
+  	margin: 0 auto;
+  	color: #000;
+  	font-size: 1.8em;
+}
 
