@@ -36,22 +36,7 @@ body {
   	font-size: 1.8em;
 }
 
-/* Setting up different sizes of headings.  Note the use of em in each.  I can control
- * the relative size of the headings, while also allowing them to be flexible if the
- * user chooses to resize the content in the screen.
- */
-h1 {
-	font-size: 2.5em;
-}
-
-h2 {
-	font-size: 2.0em;
-}
-
-h3 {
-	font-size: 1.8em;
-}
-
-h4 {
-	font-size: 1.6em;
+/* I really want my introductory text to be black, no matter what else happens. */
+#intro {
+	color: #000;
 }

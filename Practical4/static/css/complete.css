@@ -68,7 +68,7 @@ h4 {
 }
 
 /* I really want my introductory text to be black, no matter what else happens. */
-.intro {
+#intro {
 	color: #000;
 }
 
