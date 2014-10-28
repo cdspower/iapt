@@ -128,7 +128,7 @@ nav {
 	color: #9A2720;
 }
 
-/* My featured area will take up 100% of the screen, but I want it slightly indended.  Remember the setting of the
+/* My featured area will take up 100% of the screen, but I want it slightly indented.  Remember the setting of the
  *  '*' at the top that makes sure everything sizes properly?  This is where it becomes useful.  The box will be ever
  * so slightly shrunk to accommodate the margin.
  */
@@ -144,8 +144,6 @@ nav {
 .featured h2 {
 	color: #571D69;
 	font-weight: bold;
-	margin: .5em 1em 0em 0em;
-	padding: .2em;
 }
 
 /* The following specifications (up until footer) set all of the features of the individual boxes for

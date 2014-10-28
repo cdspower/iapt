@@ -96,3 +96,21 @@ nav {
 	font-weight: bold;
 	color: #9A2720;
 }
+
+/* My featured area will take up 100% of the screen, but I want it slightly indented.  Remember the setting of the
+ *  '*' at the top that makes sure everything sizes properly?  This is where it becomes useful.  The box will be ever
+ * so slightly shrunk to accommodate the margin.
+ */
+.featured{
+	width: 100%;
+	margin: .5em .5em 0em 0em;
+
+}
+
+/* Here I change the position, colour and visual emphasis of the text.  It inherits the size from the previous h2
+ * specification previously in the file.
+ */
+.featured h2 {
+	color: #571D69;
+	font-weight: bold;
+}
