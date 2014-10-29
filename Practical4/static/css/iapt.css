@@ -114,3 +114,13 @@ nav {
 	color: #571D69;
 	font-weight: bold;
 }
+
+/* The following specifications (up until footer) set all of the features of the individual boxes for
+ * books/products - given them the bordered box with rounded corners and a slight shadow, and adjusting
+ * the presentation of the text slightly each time.
+ */
+.product {
+    width: 90%;
+    margin: .5em auto;
+    padding: .2em;
+}
