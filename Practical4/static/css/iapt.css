@@ -124,3 +124,42 @@ nav {
     margin: .5em auto;
     padding: .2em;
 }
+
+.product h3{
+	color: #9A2720;
+	font-weight: bold;
+	margin: .2em;
+	padding: .2em;
+}
+
+.product h4{
+	font-style: italic;
+    padding: .2em;
+    margin: .2em .2em .2em .5em;
+}
+
+.product .glance {
+	clear: both;
+}
+
+.product .glance p{
+	margin-left: 1em;
+}
+
+/* And we close with a footer that looks like the header.  In this one I have put the footer in em instead
+ * of pixels just to demonstrate that it can be done a lot of different ways - this is not necessarily the best
+ * practice!
+ */
+footer {
+	max-width: 90em;
+	border: .1em solid #ccc;
+	background: #9A2720;
+	margin: 0em 0em .1em 0em;
+	padding: 1em;
+	clear: both;
+	font-weight: bold;
+	color: #fff;
+	-moz-border-radius: 1.5em;
+	border-radius: 1.5em;
+
+}
