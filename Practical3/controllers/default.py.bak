@@ -63,7 +63,7 @@ def updateproduct():
 
     #@IAPT retrieve the indiviudal product by getting the arguments of URL
     record = db.products(request.args(0)) or redirect(URL('default', 'noproduct'))
-    updateform =SQLFORM(db.products, record, fields=['name', 'price','description','type','publisher'])
+    updateform =SQLFORM(db.products, record, fields=['name', 'price','description','format','publisher'])
 
 
     if updateform.accepts(request,session):

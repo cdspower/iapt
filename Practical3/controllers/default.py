@@ -46,7 +46,7 @@ def addproduct():
 
     #@IAPT On acceptance we are going to add the item to the database.
     if addform.accepts(request,session):
-        db.products.insert(name=request.vars.product_name,price=request.vars.product_price, type=request.vars.product_format,
+        db.products.insert(name=request.vars.product_name,price=request.vars.product_price, format=request.vars.product_format,
                            description=request.vars.product_description,publisher=request.vars.product_publisher)
         db.commit
         response.flash = 'New product added to store.'
