@@ -36,8 +36,8 @@ def addproduct():
                    DIV(INPUT(_name='product_name', requires=IS_NOT_EMPTY())),
                    DIV(LABEL('Product Price:', _for='product_price')),
                    DIV(INPUT(_name='product_price',requires=IS_NOT_EMPTY())),
-                   DIV(LABEL('Product Type', _for='product_type')),
-                   DIV(SELECT('Book','Blu-Ray', value='b',_name='product_type')),
+                   DIV(LABEL('Product Type', _for='product_format')),
+                   DIV(SELECT('Book','Blu-Ray', value='b',_name='product_format')),
                    DIV(LABEL('Product Description', _for='product_description')),
                    DIV(TEXTAREA(_name='product_description', requires=IS_NOT_EMPTY())),
                    DIV(LABEL('Product Publisher', _for='product_publisher')),
@@ -46,7 +46,7 @@ def addproduct():
 
     #@IAPT On acceptance we are going to add the item to the database.
     if addform.accepts(request,session):
-        db.products.insert(name=request.vars.product_name,price=request.vars.product_price, type=request.vars.product_type,
+        db.products.insert(name=request.vars.product_name,price=request.vars.product_price, type=request.vars.product_format,
                            description=request.vars.product_description,publisher=request.vars.product_publisher)
         db.commit
         response.flash = 'New product added to store.'
@@ -63,7 +63,7 @@ def updateproduct():
 
     #@IAPT retrieve the indiviudal product by getting the arguments of URL
     record = db.products(request.args(0)) or redirect(URL('default', 'noproduct'))
-    updateform =SQLFORM(db.products, record, fields=['name', 'price','description','type','publisher'])
+    updateform =SQLFORM(db.products, record, fields=['name', 'price','description','format','publisher'])
 
 
     if updateform.accepts(request,session):

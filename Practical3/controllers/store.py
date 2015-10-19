@@ -3,18 +3,15 @@
 def books():
     product_id = request.args(0)
     if product_id is not None:
-        return dict(results = db((db.products.type == 'Book') & (db.products.id == product_id)).select())
+        return dict(results = db((db.products.format == 'Book') & (db.products.id == product_id)).select())
     else:
-        return dict(results = db(db.products.type == 'Book').select())
+        return dict(results = db(db.products.format == 'Book').select())
 
-#@IAPT: So here is a version which is MVC based where we are just returning control to the view
-#This could be more advanced functionality, like committing changes from the user, doing intermediary
-#calculations that the user needs or any number of things in the business logic of the application.
-#It just happens that in this case, the controller doesn't have any business logic to execute.
-#@IAPT: Practical 3 - replaced the "books" with "results" to use the subview created.
+#@IAPT: Practical 3 - replaced the empty with "results" to use the subview created and removed the data request from the corresponding view file
+#from Practical 2.
 def videos():
     product_id = request.args(0)
     if product_id is not None:
-        return dict(results = db((db.products.type == 'Blu-Ray') & (db.products.id == product_id)).select())
+        return dict(results = db((db.products.format == 'Blu-Ray') & (db.products.id == product_id)).select())
     else:
-        return dict(results = db(db.products.type == 'Blu-Ray').select())
+        return dict(results = db(db.products.format == 'Blu-Ray').select())
