@@ -7,11 +7,11 @@
 #  Language from default.py or 'en' (if the file is not found) is used as
 #  a default_language
 #
-# See <web2py-root-dir>/router.example.py for parameter's detail
+# See <web2py-root-dir>/examples/routes.parametric.example.py for parameter's detail
 #-------------------------------------------------------------------------------------
 # To enable this route file you must do the steps:
 #
-# 1. rename <web2py-root-dir>/router.example.py to routes.py
+# 1. rename <web2py-root-dir>/examples/routes.parametric.example.py to routes.py
 # 2. rename this APP/routes.example.py to APP/routes.py
 #    (where APP - is your application directory)
 # 3. restart web2py (or reload routes in web2py admin interfase)
@@ -24,7 +24,6 @@ from languages import read_possible_languages
 possible_languages = read_possible_languages(abspath('applications', app))
 #NOTE! app - is an application based router's parameter with name of an
 #            application. E.g.'welcome'
-
 
 routers = {
     app: dict(

@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.AttributeError'> "
+p3
+sS'layer'
+p4
+S'/Users/cpower/Development/iapt/applications/Practical2/controllers/store.py'
+p5
+sS'code'
+p6
+S"#@IAPT: Here the controller is returning a dictionary that contains all of the rows from the query.\ndef books():\n    return dict(books = db(db.products.type == 'Book').select())\n\n#@IAPT: So here is a version which is MVC based where we are just returning control to the view\n#This could be more advanced functionality, like committing changes from the user, doing intermediary\n#calculations that the user needs or any number of things in the business logic of the application.\n#It just happens that in this case, the controller doesn't have any business logic to execute.\ndef videos():\n    return dict()\nresponse._vars=response._caller(books)\n"
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/Users/cpower/Development/iapt/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/Users/cpower/Development/iapt/applications/Practical2/controllers/store.py", line 11, in <module>\n  File "/Users/cpower/Development/iapt/gluon/globals.py", line 412, in <lambda>\n    self._caller = lambda f: f()\n  File "/Users/cpower/Development/iapt/applications/Practical2/controllers/store.py", line 3, in books\n    return dict(books = db(db.products.type == \'Book\').select())\n  File "/Users/cpower/Development/iapt/gluon/packages/dal/pydal/helpers/classes.py", line 30, in __getattr__\n    raise AttributeError\nAttributeError\n'
+p11
+s.

@@ -1,4 +1,4 @@
-[2014-09-15 15:52:39] START
-[2014-09-16 11:29:42] EDIT HelloWorld/controllers/default.py: 0
-[2014-09-16 11:33:07] EDIT HelloWorld/views/default/index.html: -13
-[2014-09-16 12:10:34] EDIT HelloWorld/views/default/index.html: 0
+[2015-10-19 15:56:41] START
+[2015-10-19 15:57:25] EDIT Practical1Part1/views/default/index.html: 0
+[2015-10-19 15:58:09] EDIT Practical1Part1/views/default/index.html: 0
+[2015-10-19 15:58:26] EDIT Practical1Part1/controllers/default.py: 0

@@ -1,6 +1,6 @@
 #@IAPT: Here the controller is returning a dictionary that contains all of the rows from the query.
 def books():
-    return dict(books = db(db.products.type == 'Book').select())
+    return dict(books = db(db.products.format == 'Book').select())
 
 #@IAPT: So here is a version which is MVC based where we are just returning control to the view
 #This could be more advanced functionality, like committing changes from the user, doing intermediary
