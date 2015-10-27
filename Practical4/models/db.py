@@ -64,7 +64,7 @@ use_janrain(auth, filename='private/janrain.key')
 # @IAPT: Now we need to define a simple set of tables.  There are two tables - 1 for the products, and 1 for the
 # features.  The field 'id' will be automatically added to the table as a primary key.  If you want some other field
 # to be primary key there are ways to overrride that.  See the Web2Py book for details on how to do that.
-db.define_table('products', Field('name'), Field('price'), Field('type'), Field('description'), Field('publisher'))
+db.define_table('products', Field('name'), Field('price'), Field('format'), Field('description'), Field('publisher'))
 
 # @IAPT: For the features we are going to set up a foreign key.  Now, remember that a foreign key equates to a 1-many
 # relationship in our data model, so we will simply refer to the table that we want to match things to.  Web2Py will
